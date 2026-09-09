@@ -1,0 +1,520 @@
+# Stage 1 Report
+
+## Hotel Girasol Stock Flow
+
+## 1. Project Formation Overview
+
+Hotel Girasol Stock Flow will be developed as an individual Portfolio Project by Anthony.
+
+Because the project has one developer, Anthony will be responsible for:
+
+* Project management
+* Backend development
+* Frontend development
+* Database design
+* Testing
+* Documentation
+
+Git and GitHub will be used to maintain source control, development history, and project documentation.
+
+The project will still separate responsibilities by area so that development remains organized throughout the Portfolio Project.
+
+---
+
+# 2. Problem Discovery
+
+The project originated from observing the inventory workflow at Hotel Girasol.
+
+A complete inventory verification can take approximately **40 minutes**.
+
+The process depends heavily on manual counting, and there is limited immediate digital traceability when products move during daily hotel operations.
+
+When an employee takes or delivers a product, useful information includes:
+
+* Employee
+* Product
+* Quantity
+* Hotel room
+* Date
+* Time
+
+Without a centralized system, inventory quantities may need to be verified repeatedly through manual counting.
+
+Hotel Girasol Stock Flow aims to create a digital inventory workflow that records these movements and maintains updated inventory information.
+
+---
+
+# 3. Ideas Explored
+
+Three possible project ideas were considered before selecting the final MVP.
+
+## Hotel Girasol Stock Flow
+
+A digital inventory and product movement system designed for Hotel Girasol.
+
+The system would track inventory quantities and record product deliveries and restocking transactions.
+
+## Hotel Maintenance Tracker
+
+A system for managing hotel maintenance requests.
+
+Employees could report problems involving rooms, equipment, plumbing, electrical systems, air conditioning, furniture, and common areas.
+
+## Employee Shift Task Manager
+
+A system for organizing and monitoring responsibilities during employee shifts.
+
+Employees and supervisors could track assigned tasks, priorities, statuses, and completion times.
+
+---
+
+# 4. Brainstorming Process
+
+The project used the **How Might We** technique to explore the inventory problem.
+
+Questions included:
+
+* How might we reduce manual inventory counting?
+* How might we track which employee handled a product?
+* How might we record which product was delivered?
+* How might we record product quantities?
+* How might we associate deliveries with hotel rooms?
+* How might we automatically record transaction dates and times?
+* How might we identify low-stock products?
+* How might we determine when physical inventory verification is necessary?
+* How might we make inventory transactions simple enough for employees to record during normal hotel operations?
+
+These questions helped transform the original inventory problem into a more focused software solution.
+
+The **SCAMPER** framework was also used.
+
+## Substitute
+
+Replace part of the manual inventory recording process with digital transaction records.
+
+## Combine
+
+Combine information about employees, products, rooms, quantities, inventory, and transactions inside one system.
+
+## Adapt
+
+Adapt standard inventory-management concepts to the workflow of Hotel Girasol.
+
+## Modify
+
+Update inventory quantities whenever product movements occur instead of depending entirely on complete physical counts.
+
+## Put to Another Use
+
+Use historical transaction information to understand inventory activity and product usage.
+
+## Eliminate
+
+Reduce unnecessary repeated inventory verification when reliable digital information is already available.
+
+Physical inventory verification will still be used when necessary.
+
+## Reverse
+
+Instead of performing a full count simply to discover which products may be low, allow the system to identify inventory that may require verification or replenishment.
+
+---
+
+# 5. Idea Evaluation
+
+The three project ideas were evaluated according to:
+
+* Feasibility
+* Potential impact
+* Technical alignment
+* Scalability
+* Real-world value
+
+Each category was scored from 1 to 5.
+
+* **1 - Poor**
+* **2 - Weak**
+* **3 - Average**
+* **4 - Good**
+* **5 - Excellent**
+
+| Project Idea                | Feasibility | Impact | Technical Alignment | Scalability | Real-World Value |     Total |
+| --------------------------- | ----------: | -----: | ------------------: | ----------: | ---------------: | --------: |
+| Hotel Girasol Stock Flow    |           5 |      5 |                   5 |           4 |                5 | **24/25** |
+| Hotel Maintenance Tracker   |           4 |      4 |                   4 |           4 |                4 | **20/25** |
+| Employee Shift Task Manager |           5 |      3 |                   4 |           3 |                4 | **19/25** |
+
+Hotel Girasol Stock Flow achieved the highest evaluation score.
+
+---
+
+# 6. Reasons for Selection
+
+Hotel Girasol Stock Flow was selected because:
+
+* It addresses an observed real-world problem.
+* The current workflow has a measurable time cost.
+* It has clearly identifiable users.
+* The MVP is technically achievable by an individual developer.
+* It provides meaningful Python backend development experience.
+* It requires database design and transaction logic.
+* It provides opportunities to work with authentication and web development.
+* It can be implemented incrementally.
+* It has potential for future expansion.
+
+The maintenance tracker and employee task manager were both technically feasible, but Stock Flow was more directly connected to the original operational problem.
+
+---
+
+# 7. Selected MVP Concept
+
+The selected MVP is:
+
+## Hotel Girasol Stock Flow
+
+Hotel Girasol Stock Flow will maintain current inventory information and record product movements during hotel operations.
+
+The core product delivery workflow follows:
+
+**Employee → Product → Quantity → Room → Date → Time**
+
+For example, if an employee delivers two units of a product to Room 204, the application will record:
+
+* Employee responsible
+* Product
+* Quantity: 2
+* Room: 204
+* Current date
+* Current time
+
+The corresponding inventory quantity will then be reduced.
+
+The transaction will also remain available in the historical transaction record.
+
+---
+
+# 8. Problem Statement
+
+Hotel Girasol currently depends heavily on manual inventory verification.
+
+A complete inventory check can take approximately **40 minutes**.
+
+The system also lacks immediate digital visibility into product movement.
+
+Hotel Girasol Stock Flow aims to improve this workflow by maintaining:
+
+* Current product quantities
+* Product delivery records
+* Restocking records
+* Employee information
+* Room information
+* Transaction timestamps
+* Inventory transaction history
+
+The application will not completely eliminate physical inventory checks.
+
+Instead, it will provide better inventory information so that physical verification can be performed when it is actually necessary.
+
+---
+
+# 9. Target Users
+
+The main users of Hotel Girasol Stock Flow will be:
+
+## Hotel Employees
+
+Employees will record product deliveries and inventory movements.
+
+## Supervisors
+
+Supervisors will be able to review current inventory information, low-stock products, and transaction history.
+
+## Hotel Management
+
+Management will have better visibility into inventory activity and products that may require attention or replenishment.
+
+---
+
+# 10. MVP Features
+
+The initial MVP will include:
+
+## 1. User Authentication
+
+Employees must log in before accessing protected inventory functionality.
+
+## 2. Employee Identification
+
+Every inventory transaction will be associated with the authenticated employee.
+
+## 3. Product Inventory
+
+Authorized users can view current products and recorded quantities.
+
+## 4. Product Management
+
+Authorized users can create and update product information.
+
+## 5. Product Delivery Registration
+
+Employees can record products delivered to hotel rooms.
+
+## 6. Quantity Tracking
+
+Every transaction stores the quantity involved.
+
+## 7. Room Tracking
+
+Product deliveries can be associated with a hotel room.
+
+## 8. Automatic Date and Time
+
+The application automatically records when each transaction occurs.
+
+## 9. Automatic Inventory Updates
+
+A valid delivery automatically reduces the corresponding inventory quantity.
+
+## 10. Restocking
+
+Authorized users can record products added back into inventory.
+
+## 11. Low-Stock Identification
+
+Products below a defined threshold will be identified as low stock.
+
+## 12. Transaction History
+
+Authorized users can review previous inventory transactions.
+
+A transaction may include:
+
+* Employee
+* Product
+* Quantity
+* Transaction type
+* Room when applicable
+* Date
+* Time
+
+---
+
+# 11. MVP Boundaries
+
+The initial MVP will focus on the core inventory workflow.
+
+The first version will include:
+
+* Authentication
+* Employees
+* Products
+* Inventory quantities
+* Room deliveries
+* Restocking
+* Low-stock detection
+* Transaction history
+
+The following features are outside the initial MVP:
+
+* Advanced analytics
+* Machine-learning predictions
+* Complex dashboards
+* Barcode scanning
+* QR scanning
+* Multi-hotel support
+* Automated purchasing
+* Advanced AI functionality
+
+These features may be considered after the core system is stable.
+
+---
+
+# 12. Technology Stack
+
+The project will initially use the following technologies.
+
+## Backend
+
+### Python
+
+Python will be used for:
+
+* Application logic
+* Inventory calculations
+* Data validation
+* Backend development
+
+### Flask
+
+Flask will be used as the web application framework.
+
+### SQLAlchemy
+
+SQLAlchemy will be used to interact with the relational database through Python.
+
+### Flask-Login
+
+Flask-Login will be used to manage authentication and user sessions.
+
+## Database
+
+### PostgreSQL
+
+PostgreSQL will store persistent application data such as:
+
+* Users
+* Employees
+* Products
+* Inventory quantities
+* Rooms
+* Transactions
+
+## Frontend
+
+### HTML
+
+Used to structure application pages.
+
+### CSS
+
+Used to style the user interface.
+
+### JavaScript
+
+Used for client-side interactions and dynamic interface behavior.
+
+### Jinja2
+
+Used by Flask to render server-side HTML templates.
+
+## Testing
+
+### pytest
+
+pytest will be used to test:
+
+* Inventory calculations
+* Database operations
+* Authentication
+* Transaction creation
+* Validation rules
+* Important backend workflows
+
+## Version Control
+
+### Git and GitHub
+
+Git and GitHub will be used for:
+
+* Source control
+* Development history
+* Commits
+* Branches
+* Repository management
+* Documentation
+
+---
+
+# 13. Expected Impact
+
+Hotel Girasol Stock Flow aims to:
+
+* Reduce unnecessary manual inventory work
+* Improve inventory visibility
+* Improve product traceability
+* Improve employee accountability
+* Maintain transaction history
+* Identify low-stock products more easily
+* Provide faster access to inventory information
+
+The current inventory process can take approximately **40 minutes**.
+
+A measurable project target is to investigate whether the software-assisted workflow can reduce inventory verification time to approximately **15 minutes**.
+
+This result is not guaranteed.
+
+The improvement will need to be measured after a functional version of the application has been implemented and tested.
+
+---
+
+# 14. Risks and Constraints
+
+## Inventory Accuracy
+
+Digital inventory may become inaccurate if product movements are not recorded correctly.
+
+## Incorrect User Input
+
+Employees may accidentally enter incorrect quantities or information.
+
+## Transaction Validation
+
+The application must prevent invalid transactions and prevent inventory quantities from becoming negative.
+
+## Authentication
+
+Only authorized users should have access to protected inventory functionality.
+
+## Database Consistency
+
+Inventory quantities and transaction history must remain synchronized.
+
+## Multiple Users
+
+Several employees may interact with inventory information.
+
+## Usability
+
+The application must make inventory transactions fast and simple enough to use during normal hotel operations.
+
+## Individual Development
+
+The project is being developed by one person, so project scope and development time must be carefully controlled.
+
+## Scope Expansion
+
+Advanced functionality must not delay completion of the core MVP.
+
+---
+
+# 15. Future Opportunities
+
+After the MVP is stable, possible future improvements include:
+
+* Barcode scanning
+* QR code support
+* Automated low-stock notifications
+* Inventory reports
+* Advanced dashboards
+* Product usage analytics
+* Inventory consumption forecasting
+* AI-assisted inventory insights
+* AI-assisted replenishment recommendations
+
+These features are not required for the initial MVP.
+
+---
+
+# 16. Stage 1 Conclusion
+
+Stage 1 established the foundation for Hotel Girasol Stock Flow.
+
+The project began with the identification of a real inventory workflow that currently requires significant manual work.
+
+Three possible project concepts were considered and evaluated according to feasibility, impact, technical alignment, scalability, and real-world value.
+
+Hotel Girasol Stock Flow achieved the highest evaluation score and was selected as the final Portfolio Project MVP.
+
+The project will focus on maintaining accurate information about:
+
+* Employees
+* Products
+* Quantities
+* Rooms
+* Inventory movements
+* Dates
+* Times
+
+The application will use Python, Flask, PostgreSQL, SQLAlchemy, Flask-Login, HTML, CSS, JavaScript, Jinja2, and pytest.
+
+The next stage will convert this MVP definition into technical requirements, database models, application architecture, user flows, and an implementation plan.
